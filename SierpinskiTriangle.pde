@@ -1,4 +1,4 @@
-Triangle triangle;
+Triangle tr;
 Button scaleUp;
 Button scaleDown;
 Button addTriangles;
@@ -21,13 +21,13 @@ void setup(){
   rotateCCW = new Button(810, 510, 180, 80, "Rotate CCW");
   addTriangle = new Button(810, 610, 180, 80, "Add Triangle");
   removeTriangle = new Button(810, 710, 180, 80, "Remove Triangle");
-  triangle = new Triangle(400, 400, 400, 1);
-  triangles.add(triangle);
+  tr = new Triangle(400, 400, 400, 1);
+  triangles.add(tr);
   triangles.add(new Triangle(600, 400, 200, 2));
 }
 void draw(){
   background(200);
-  triangle.setColor(tColor);
+  tr.setColor(tColor);
   showTriangles();
   fill(50);
   rect(800, 0, 200, 800);
@@ -38,34 +38,34 @@ void mousePressed(){
 }
 void manageButtons(){
   if(scaleUp.checkClick()){
-    triangle.setLen(triangle.getLen() + 20);
+    tr.setLen(tr.getLen() + 20);
   }
   if(scaleDown.checkClick()){
-    triangle.setLen(triangle.getLen() - 20);
+    tr.setLen(tr.getLen() - 20);
   }
   if(addTriangles.checkClick()){
-    triangle.setMin(triangle.getMin() * 2);
+    tr.setMin(tr.getMin() * 2);
   }
   if(removeTriangles.checkClick()){
-    triangle.setMin(triangle.getMin() / 2);
+    tr.setMin(tr.getMin() / 2);
   }
   if(rotateCW.checkClick()){
-    triangle.setAngle(triangle.getAngle() + 15);
+    tr.setAngle(tr.getAngle() + 15);
   }
   if(rotateCCW.checkClick()){
-    triangle.setAngle(triangle.getAngle() - 15);
+    tr.setAngle(tr.getAngle() - 15);
   }
   if(addTriangle.checkClick()){
-    triangle.setColor(100);
-    triangle = new Triangle(400, 400, 400, 1);
+    tr.setColor(100);
+    tr = new Triangle(400, 400, 400, 1);
     tNum = triangles.size();
-    triangles.add(triangle);
+    triangles.add(tr);
   }
   if(removeTriangle.checkClick()){
     if(triangles.size() > 1){
-      triangles.remove(triangle);
+      triangles.remove(tr);
       tNum = 0;
-      triangle = triangles.get(tNum);
+      tr = triangles.get(tNum);
     }
   }
 }
@@ -81,37 +81,37 @@ void showButtons(){
 }
 void keyPressed(){
   if(key == 'w'){
-    triangle.setY(triangle.getY() - 20);
+    tr.setY(tr.getY() - 20);
   }
   if(key == 's'){
-    triangle.setY(triangle.getY() + 20);
+    tr.setY(tr.getY() + 20);
   }
   if(key == 'd'){
-    triangle.setX(triangle.getX() + 20);
+    tr.setX(tr.getX() + 20);
   }
   if(key == 'a'){
-    triangle.setX(triangle.getX() - 20);
+    tr.setX(tr.getX() - 20);
   }
   if(keyCode == UP){
-    triangle.setColor(100);
-    if(triangle != triangles.get(triangles.size() -1)){
+    tr.setColor(100);
+    if(tr != triangles.get(triangles.size() -1)){
       tNum++;
-      triangle = triangles.get(tNum);
+      tr = triangles.get(tNum);
     }
     else{
       tNum = 0;
-      triangle = triangles.get(tNum);
+      tr = triangles.get(tNum);
     }
   }
   if(keyCode == DOWN){
-    triangle.setColor(100);
-    if(triangle != triangles.get(0)){
+    tr.setColor(100);
+    if(tr != triangles.get(0)){
       tNum--;
-      triangle = triangles.get(tNum);
+      tr = triangles.get(tNum);
     }
     else{
       tNum = triangles.size() - 1;
-      triangle = triangles.get(tNum);
+      tr = triangles.get(tNum);
     }
   }
 }
