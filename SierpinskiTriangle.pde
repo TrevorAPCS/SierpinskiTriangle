@@ -1,4 +1,3 @@
-boolean up;
 Triangle triangle;
 Button scaleUp;
 Button scaleDown;
@@ -16,8 +15,8 @@ void setup(){
   size(1000, 800);
   scaleUp = new Button(810, 10, 180, 80, "Scale Up");
   scaleDown = new Button(810, 110, 180, 80, "Scale Down");
-  addTriangles = new Button(810, 210, 180, 80, "Add Triangles");
-  removeTriangles = new Button(810, 310, 180, 80, "Remove Triangles");
+  addTriangles = new Button(810, 210, 180, 80, "Add Recursive Call");
+  removeTriangles = new Button(810, 310, 180, 80, "Remove Recursive Call");
   rotateCW = new Button(810, 410, 180, 80, "Rotate CW");
   rotateCCW = new Button(810, 510, 180, 80, "Rotate CCW");
   addTriangle = new Button(810, 610, 180, 80, "Add Triangle");
